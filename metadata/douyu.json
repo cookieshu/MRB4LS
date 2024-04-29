@@ -1,0 +1,48 @@
+{
+  "graph": {
+    "node": [
+      {
+        "filename": "user.csv",
+        "attribute": []
+      },
+      {
+        "filename": "room.csv",
+        "attribute": []
+      }
+    ],
+    "edge": [
+      {
+        "filename": "user-room-gift.csv",
+        "weighted": true
+      },
+      {
+        "filename": "user-room-chat.csv",
+        "weighted": true
+      },
+      {
+        "filename": "user-room-enter.csv",
+        "weighted": true
+      }
+    ]
+  },
+  "task": [
+    {
+      "filename": "user-room-gift.csv",
+      "type": "top-k-recommendation",
+      "loss": "binary-cross-entropy",
+      "weight": 0.5
+    },
+    {
+      "filename": "user-room-chat.csv",
+      "type": "top-k-recommendation",
+      "loss": "binary-cross-entropy",
+      "weight": 0.3
+    },
+    {
+      "filename": "user-room-enter.csv",
+      "type": "top-k-recommendation",
+      "loss": "binary-cross-entropy",
+      "weight": 0.2
+    }
+  ]
+}
